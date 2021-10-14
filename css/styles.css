@@ -49,6 +49,7 @@ img {
   max-width: 100%;
   height: auto;
 }
+
 address {
   font-style: normal;
 }
@@ -63,7 +64,7 @@ address {
   padding-bottom: 94px;
 }
 
-.section.no-top-padding {
+.section--small {
   padding-top: 0;
 }
 
@@ -90,16 +91,16 @@ address {
   line-height: 1.2;
 }
 
-.logo-black {
+.logo--black {
   color: var(--black-color);
 }
 
-.logo-white {
+.logo--white {
   color: var(--primary-white-color);
 }
 
 /* Header section */
-.menu,
+.container--header,
 .navigation,
 .nav-menu,
 .contacts-menu {
@@ -115,13 +116,13 @@ address {
   margin-left: auto;
 }
 
-.nav-menu .item:not(:last-child),
-.contacts-menu .item:not(:last-child) {
+.nav-menu__item:not(:last-child),
+.contacts-menu__item:not(:last-child) {
   margin-right: 50px;
 }
 
-.nav-menu .page,
-.contacts-menu .contact {
+.nav-menu__page,
+.contacts-menu__contact {
   display: inline-flex;
   padding-top: 32px;
   padding-bottom: 31px;
@@ -134,28 +135,28 @@ address {
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.contacts-menu .contact {
+.contacts-menu__contact {
   color: var(--primary-text-color);
 }
 
-.icons-header {
+.contacts-menu__icon {
   fill: currentColor;
   margin-right: 10px;
 }
 
-.nav-menu .page:hover,
-.nav-menu .page:focus,
-.nav-menu .page.current,
-.contacts-menu .contact:hover,
-.contacts-menu .contact:focus {
+.nav-menu__page:hover,
+.nav-menu__page:focus,
+.nav-menu__page--current,
+.contacts-menu__contact:hover,
+.contacts-menu__contact:focus {
   color: var(--accent-color);
 }
 
-.nav-menu .page {
+.nav-menu__page {
   position: relative;
 }
 
-.nav-menu .page.current::after {
+.nav-menu__page--current::after {
   content: '';
   position: absolute;
   bottom: -1px;
@@ -184,12 +185,12 @@ address {
   align-items: baseline;
 }
 
-.footer .logo {
+.logo--footer {
   display: block;
   margin-bottom: 20px;
 }
 
-.address .contact {
+.address__contact {
   color: var(--text-white-opacity);
   font-weight: 400;
   font-size: 14px;
@@ -198,22 +199,21 @@ address {
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.address .item:not(:last-child) {
+.address__item:not(:last-child) {
   margin-bottom: 9px;
 }
 
-.address .contact:hover,
-.address .contact:focus {
+.address__contact:hover,
+.address__contact:focus {
   color: var(--primary-white-color);
 }
 
-.footer-address,
-.footer-block {
+.footer-grid {
   margin-top: 12px;
   margin-left: 87px;
 }
 
-.footer-heading {
+.footer__heading {
   display: flex;
   margin-bottom: 20px;
   color: var(--primary-white-color);
@@ -226,11 +226,11 @@ address {
   display: flex;
 }
 
-.social-footer .icon-item + .icon-item {
+.social-footer__item + .social-footer__item {
   margin-left: 10px;
 }
 
-.social-footer .link {
+.social-footer__link {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -244,17 +244,17 @@ address {
     color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.social-footer .link:hover,
-.social-footer .link:focus {
+.social-footer__link:hover,
+.social-footer__link:focus {
   background-color: var(--accent-color);
   color: var(--primary-white-color);
 }
 
-.social-footer .icon {
+.social-footer__icon {
   fill: currentColor;
 }
 
-.footer-form .form-input {
+.footer-form__input {
   margin: 0 12px 0 0;
   padding: 14px 16px;
   width: 358px;
@@ -270,17 +270,17 @@ address {
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.footer-form .form-input::placeholder {
+.footer-form__input::placeholder {
   color: rgba(255, 255, 255, 0.6);
 }
 
-.footer-form .form-input:hover,
-.footer-form .form-input:focus {
+.footer-form__input:hover,
+.footer-form__input:focus {
   outline: none;
   border-color: var(--primary-white-color);
 }
 
-.button-icon {
+.button__icon {
   margin-left: 4px;
   vertical-align: middle;
   fill: currentColor;
@@ -295,7 +295,7 @@ address {
   border-radius: 4px;
 }
 
-.button.primary {
+.button__primary {
   padding: 10px 0;
   width: 200px;
   background-color: var(--accent-color);
@@ -309,22 +309,22 @@ address {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.button.primary:hover,
-.button.primary:focus {
+.button__primary:hover,
+.button__primary:focus {
   background-color: var(--button-primaty-hover);
 }
 
-.filters {
+.filter {
   display: flex;
   justify-content: center;
   margin-bottom: 50px;
 }
 
-.filters .space + .space {
+.filter__item + .filter__item {
   margin-left: 8px;
 }
 
-.button.filter {
+.filter__button {
   padding: 6px 22px;
   background-color: var(--button-filter);
   color: var(--primary-black-color);
@@ -336,9 +336,9 @@ address {
     color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.button.filter:hover,
-.button.filter:focus,
-.button.filter.current {
+.filter__button:hover,
+.filter__button:focus,
+.filter__button.current {
   background-color: var(--accent-color);
   color: var(--primary-white-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
@@ -346,7 +346,7 @@ address {
 }
 
 /* Studio page */
-.section-title {
+.section__title {
   margin-bottom: 50px;
   color: var(--primary-black-color);
   font-weight: 700;
@@ -371,7 +371,7 @@ address {
   background-size: cover;
 }
 
-.hero-title {
+.hero__title {
   margin-bottom: 30px;
   color: var(--primary-white-color);
   font-weight: 900;
@@ -389,13 +389,13 @@ address {
   margin-top: -30px;
 }
 
-.benefits .item {
+.benefits__item {
   flex-basis: calc(100% / 4 - 30px);
   margin-left: 30px;
   margin-top: 30px;
 }
 
-.benefits .icon {
+.benefits__icon {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -405,7 +405,7 @@ address {
   border-radius: 4px;
 }
 
-.benefits .title {
+.benefits__title {
   margin-bottom: 10px;
   color: var(--primary-black-color);
   font-weight: 700;
@@ -414,26 +414,26 @@ address {
   text-transform: uppercase;
 }
 
-.benefits .description {
+.benefits__description {
   line-height: 1.71;
 }
 
 /* What we do section */
-.what-we-do {
+.services {
   display: flex;
   flex-wrap: wrap;
   margin-left: -30px;
   margin-top: -30px;
 }
 
-.what-we-do .item {
+.services__item {
   flex-basis: calc(100% / 3 - 30px);
   margin-left: 30px;
   margin-top: 30px;
   position: relative;
 }
 
-.what-we-do .description {
+.services__description {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -455,17 +455,14 @@ address {
   margin-top: -30px;
 }
 
-.team .item {
-  flex-basis: calc(100% / 4 - 30px);
-  margin-left: 30px;
-  margin-top: 30px;
-}
-
-.bg-team {
+.section--background {
   background-color: var(--background-grey);
 }
 
-.team .item {
+.team__item {
+  flex-basis: calc(100% / 4 - 30px);
+  margin-left: 30px;
+  margin-top: 30px;
   padding-bottom: 30px;
   background-color: var(--primary-white-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -473,24 +470,24 @@ address {
   border-radius: 0px 0px 4px 4px;
 }
 
-.team .image {
+.team__image {
   margin-bottom: 30px;
 }
 
-.team .name,
-.team .position {
+.team__name,
+.team__position {
   font-size: 16px;
   line-height: 1.19;
   text-align: center;
 }
 
-.team .name {
+.team__name {
   margin-bottom: 10px;
   color: var(--primary-black-color);
   font-weight: 500;
 }
 
-.team .position {
+.team__position {
   margin-bottom: 16px;
 }
 
@@ -499,7 +496,7 @@ address {
   justify-content: center;
 }
 
-.social-team .icon-item + .icon-item {
+.social-team__item + .social-team__item {
   margin-left: 10px;
 }
 
@@ -512,13 +509,13 @@ address {
   margin-top: -10px;
 }
 
-.social-team .icon-item {
+.social-team__item {
   flex-basis: calc(100% / 4 - 32px);
   margin-left: 10px;
   margin-top: 10px;
 } */
 
-.social-team .link {
+.social-team__link {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -532,32 +529,32 @@ address {
     color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.social-team .link:hover,
-.social-team .link:focus {
+.social-team__link:hover,
+.social-team__link:focus {
   background-color: var(--accent-color);
   color: var(--primary-white-color);
 }
 
-.social-team .icon {
+.social-team__icon {
   fill: currentColor;
 }
 
 /* Partners section */
 
-.partners {
+.clients {
   display: flex;
   flex-wrap: wrap;
   margin-left: -30px;
   margin-top: -30px;
 }
 
-.partners .item {
+.clients__item {
   flex-basis: calc(100% / 6 - 30px);
   margin-left: 30px;
   margin-top: 30px;
 }
 
-.partners .link {
+.clients__link {
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -570,12 +567,12 @@ address {
   transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.partners .icon {
+.clients__icon {
   fill: currentColor;
 }
 
-.partners .link:hover,
-.partners .link:focus {
+.clients__link:hover,
+.clients__link:focus {
   border: 1px solid var(--accent-color);
   color: var(--accent-color);
 }
@@ -618,7 +615,7 @@ address {
   transform: translate(-50%, -50%) scale(0.8);
 }
 
-.modal .close {
+.button-close {
   position: absolute;
   top: 8px;
   right: 8px;
@@ -637,16 +634,16 @@ address {
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal .icon {
+.button-close__icon {
   fill: currentColor;
 }
 
-.modal .close:hover,
-.modal .close:focus {
+.button-close:hover,
+.button-close:focus {
   color: var(--accent-color);
 }
 
-.form-title {
+.form__title {
   margin-bottom: 30px;
   font-weight: 700;
   font-size: 20px;
@@ -655,17 +652,17 @@ address {
   color: var(--primary-black-color);
 }
 
-.form-field {
+.form__field {
   display: block;
   position: relative;
 }
 
-.button-center {
+.button__primary--center {
   display: block;
   margin: auto;
 }
 
-.form-field .icon {
+.form__icon {
   position: absolute;
   top: 50%;
   left: 12px;
@@ -676,12 +673,12 @@ address {
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.form-input:hover + .icon,
-.form-input:focus + .icon {
+.form__input:hover + .form__icon,
+.form__input:focus + .form__icon {
   fill: var(--accent-color);
 }
 
-.form-field .form-label {
+.form__label {
   position: absolute;
   top: -16px;
   font-size: 12px;
@@ -689,8 +686,8 @@ address {
   letter-spacing: 0.01em;
 }
 
-.form-field .form-input,
-.form-field .form-textarea {
+.form__input,
+.form__textarea {
   display: block;
   width: 100%;
   margin: 0 0 29px 0;
@@ -705,37 +702,37 @@ address {
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.form-field .form-textarea {
+.form__textarea {
   padding-left: 16px;
   margin-bottom: 24px;
 }
 
-.form-field .form-input:hover,
-.form-field .form-textarea:hover,
-.form-field .form-input:focus,
-.form-field .form-textarea:focus {
+.form__input:hover,
+.form__textarea:hover,
+.form__input:focus,
+.form__textarea:focus {
   outline: none;
   border-color: var(--accent-color);
 }
 
-.form-field .form-textarea::placeholder {
+.form__textarea::placeholder {
   color: rgba(117, 117, 117, 0.5);
 }
 
-.agree-check {
+.form__checkbox {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 34px;
 }
 
-.agree-check .checkmark {
+.form__checkmark {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
 }
 
-.agree-check .icon {
+.form__check-icon {
   width: 16px;
   height: 16px;
   margin-right: 7px;
@@ -748,32 +745,32 @@ address {
 }
 
 /* Outline for custom checkbox */
-.agree-check .checkmark:focus + .icon,
-.agree-check .checkmark:checked:focus + .icon {
+.form__checkmark:focus + .form__check-icon,
+.form__checkmark:checked:focus + .form__check-icon {
   outline: 2px solid var(--primary-black-color);
 }
 
-.agree-check .checkmark:checked + .icon {
+.form__checkmark:checked + .form__check-icon {
   background-color: var(--accent-color);
   border-color: var(--accent-color);
   fill: var(--primary-white-color);
   outline: none;
 }
 
-.agree-check .terms {
+.form__terms {
   color: var(--accent-color);
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Portfolio page */
-.projects {
+.projects-grid {
   display: flex;
   flex-wrap: wrap;
   margin-left: -30px;
   margin-top: -30px;
 }
 
-.projects .item {
+.projects-grid__item {
   flex-basis: calc(100% / 3 - 30px);
   margin-left: 30px;
   margin-top: 30px;
@@ -781,21 +778,21 @@ address {
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.projects .project {
+.project {
   display: block;
 }
-.projects .item:hover,
-.projects .project:focus {
+.projects-grid__item:hover,
+.project:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
-.project .description {
+.project__description {
   position: relative;
   overflow: hidden;
 }
 
-.project .overlay {
+.project__overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -806,17 +803,12 @@ address {
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* .projects .item:hover .project .overlay,
-.projects .item:focus .project .overlay {
-  transform: translateY(0);
-} */
-
-.projects .item:hover .project .overlay,
-.projects .project:focus .overlay {
+.projects-grid__item:hover .project__overlay,
+.project:focus .project__overlay {
   transform: translateY(0);
 }
 
-.project .text {
+.project__text {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -828,46 +820,14 @@ address {
   color: var(--primary-white-color);
 }
 
-/* Another way to create overlay (with PseudoClass) */
-/* .project .description::before {
-  position: absolute;
-  content: '';
-  width: 100%;
-  height: 100%;
-  background-color: rgba(33, 150, 243, 0.9);
-  transform: translateY(101%);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.projects .item:hover .project .description::before {
-  transform: translateY(0);
-} 
-
-.project .text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, 100%);
-  width: 322px;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 1.56;
-  color: var(--primary-white-color);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.projects .item:hover .project .text {
-  transform: translate(-50%, -50%);
-} */
-
-.substrate {
+.project__substrate {
   background-color: var(--primary-white-color);
   padding: 20px 24px;
   border: 1px solid #eeeeee;
   border-top: 0;
 }
 
-.project .name {
+.project__name {
   margin-bottom: 4px;
   color: var(--primary-black-color);
   font-weight: 700;
@@ -876,7 +836,7 @@ address {
   letter-spacing: 0.06em;
 }
 
-.project .type {
+.project__type {
   color: var(--primary-text-color);
   font-weight: 400;
   font-size: 16px;
